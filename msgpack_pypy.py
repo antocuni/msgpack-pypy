@@ -3,6 +3,9 @@ This is only a proof of concept for now. Use it at your own risk.
 
 It requires my fork of msgpack-python to work:
 https://github.com/antocuni/msgpack-python
+
+If you use the fast_cffi_list_init of PyPy, serializations of int/float lists
+is 8x faster than the plain msgpack.
 """
 
 import msgpack
