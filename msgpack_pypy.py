@@ -1,3 +1,10 @@
+"""
+This is only a proof of concept for now. Use it at your own risk.
+
+It requires my fork of msgpack-python to work:
+https://github.com/antocuni/msgpack-python
+"""
+
 import msgpack
 
 try:
