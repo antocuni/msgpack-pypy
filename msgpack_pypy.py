@@ -25,6 +25,8 @@ if is_pypy:
     # PyPy version, with a fast-path to pack int/float lists
     import cffi
     ffi = cffi.FFI()
+    LONG_SIZE = ffi.sizeof("long")
+    DOUBLE_SIZE = ffi.sizeof("double")
 
     # packing
     def pack(o, stream, **kwargs):
@@ -54,12 +56,12 @@ if is_pypy:
     # unpacking
     def unpack_ext_type(typecode, data):
         if typecode == INT_LIST:
-            N = len(data)/8 # XXX: 4 on 32bit
+            N = len(data)/LONG_SIZE
             chars = ffi.new("char[]", data)
             ints = ffi.cast("long[%d]" % N, chars)
             return list(ints)
         elif typecode == FLOAT_LIST:
-            N = len(data)/8
+            N = len(data)/DOUBLE_SIZE
             chars = ffi.new("char[]", data)
             floats = ffi.cast("double[%d]" % N, chars)
             return list(floats)
