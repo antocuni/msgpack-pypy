@@ -28,15 +28,17 @@ the Python list at once.
 Here are the results got by running this benchmark:
 https://bitbucket.org/antocuni/msgpack-pypy/src/default/benchmark.py
 
-list of ints
-  CPython/msgpack:   dump: 0.2287 ms     load: 0.2075 ms
-  PyPy/msgpack:      dump: 0.2019 ms     load: 0.2447 ms
-  PyPy/msgpack_pypy: dump: 0.1321 ms     load: 0.0391 ms
+::
 
-list of floats
-  CPython/msgpack:   dump: 0.2295 ms     load: 0.2096 ms
-  PyPy/msgpack:      dump: 1.1049 ms     load: 1.9803 ms
-  PyPy/msgpack_pypy: dump: 0.1373 ms     load: 0.0392 ms
+    list of ints
+      CPython/msgpack:   dump: 0.2287 ms     load: 0.2075 ms
+      PyPy/msgpack:      dump: 0.2019 ms     load: 0.2447 ms
+      PyPy/msgpack_pypy: dump: 0.1321 ms     load: 0.0391 ms
+
+    list of floats
+      CPython/msgpack:   dump: 0.2295 ms     load: 0.2096 ms
+      PyPy/msgpack:      dump: 1.1049 ms     load: 1.9803 ms
+      PyPy/msgpack_pypy: dump: 0.1373 ms     load: 0.0392 ms
 
 As you can see, dumping is 1.73x faster for ints and 8x faster for floats. The
 speedup for loading is even more impressive, as it is 6.2x faster for ints and
