@@ -7,7 +7,7 @@ long_description = open(readme).read()
 
 setup(
     name='msgpack-pypy',
-    version='0.0.1',
+    version='0.0.2',
     author='Antonio Cuni',
     author_email='anto.cuni@gmail.com',
     py_modules=['msgpack_pypy'],
