@@ -39,7 +39,7 @@ if is_pypy:
     class Packer(msgpack.Packer):
         def _pack(self, obj, *args):
             if isinstance(obj, list):
-                strategy = __pypy__.list_strategy(obj)
+                strategy = __pypy__.strategy(obj)
                 if strategy == 'int':
                     # super-fast conversion from list-of-ints to a raw
                     # buffer, only in the pypy fast_cffi_list_init branch for
